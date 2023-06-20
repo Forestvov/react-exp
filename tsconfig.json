@@ -6,7 +6,7 @@
     "module": "ESNext",
     //во что компилируется код
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
     //esModuleInterop позволяет работать с пакетами, которые используют common js
