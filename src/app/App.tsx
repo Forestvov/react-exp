@@ -1,13 +1,13 @@
-import {FC} from "react";
-import {Link} from "react-router-dom";
-
-import "./styles/index.scss";
+import {FC, Suspense} from "react";
 
 import {useTheme} from "app/providers/ThemeProvider";
-
 import {classNames} from "shared/lib/classNames/classNames";
 import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/Navbar";
+import {Sidebar} from "widgets/Sidebar";
+
+import "./styles/index.scss";
+import {useTranslation} from "react-i18next";
 
 
 export const App: FC = () => {
@@ -15,8 +15,14 @@ export const App: FC = () => {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Navbar/>
-            <AppRouter/>
+            <Suspense fallback={""}>
+                <Navbar/>
+
+                <div className={"content-page"}>
+                    <Sidebar/>
+                    <AppRouter/>
+                </div>
+            </Suspense>
         </div>
     );
 };
