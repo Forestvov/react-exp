@@ -7,5 +7,3 @@ export const classNames = (cls: string, mods: Mods = {}, additional: string[] = 
         .filter(([cls, value]) => Boolean(value))
         .map(([cls]) => cls),
 ].join(' ');
-
-classNames('remove-btn', { hovered: true, selectable: true, red: false }, ['pdf']);
